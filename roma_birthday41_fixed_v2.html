@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>С Днём Рождения, Мужа!</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',sans-serif;overflow:hidden;background:#000;cursor:pointer;-webkit-font-smoothing:antialiased}
+.page{width:100vw;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(12px,2vh,24px) clamp(12px,3vw,36px);text-align:center;color:#fff;position:relative;animation: floatSlow 16s ease-in-out infinite;font-weight:300;line-height:1.18;max-width:920px;text-shadow:0 2px 25px rgba(0,0,0,0.22);z-index:10;padding:clamp(32px,4.5vh,48px) clamp(38px,5.5vw,58px);background:rgba(255,255,255,0.22);border-radius:24px;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.22);letter-spacing:-0.01em}
+.intro-text{font-size:clamp(1.0em,3.2vw,1.6em);font-weight:300;line-height:1.18}
+.final-wish{font-size:clamp(0.9em,2.2vw,1.1em);font-weight:300;line-height:1.22;margin-top:clamp(8px,1.5vh,14px)}
+.page-number{position:absolute;bottom:clamp(38px,5vh,58px);left:50%;transform:translateX(-50%);font-size:clamp(0.78em,1.6vw,0.95em);font-weight:400;background:rgba(255,255,255,0.22);padding:8px 16px;border-radius:14px;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.22);z-index:10}
+.tap-hint{position:absolute;bottom:clamp(115px,14vh,155px);left:50%;transform:translateX(-50%);font-size:clamp(0.78em,1.6vw,0.95em);font-weight:400;animation: floatSlow 16s ease-in-out infinite;background:rgba(255,255,255,0.22);padding:8px 18px;border-radius:16px;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.22);z-index:10;white-space:nowrap}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-10px)}}
+.final-title{font-size:clamp(1.4em,4.5vw,2.6em);font-weight:400;text-shadow:0 4px 35px rgba(0,0,0,0.22);letter-spacing:-0.02em;margin-bottom:clamp(8px,1.5vh,14px);line-height:1.05}
+.signature{font-size:clamp(0.95em,2.2vw,1.15em);font-weight:400;margin-top:clamp(6px,1vh,10px);line-height:1.1}
+.emoji{position:absolute;font-size:clamp(2em,6vw,4.2em);pointer-events:none;z-index:8;opacity:0.98;}
+.emoji-float{animation: floatSlow 16s ease-in-out infinite;opacity:0}50%{transform:scale(1.3) rotate(180deg)}100%{transform:scale(1) rotate(360deg);opacity:1}}
+.bg0{background:radial-gradient(circle at 30% 50%,rgba(102,126,234,0.22),rgba(30,58,138,0.22))}
+.bg1{background:radial-gradient(circle at 70% 40%,rgba(59,130,246,0.22),rgba(30,41,59,0.22))}
+.bg2{background:radial-gradient(circle at 50% 50%,rgba(14,165,233,0.22),rgba(22,78,99,0.22))}
+.bg3{background:radial-gradient(circle at 40% 60%,rgba(16,185,129,0.22),rgba(6,78,59,0.22))}
+.bg4{background:radial-gradient(circle at 60% 40%,rgba(249,115,22,0.22),rgba(124,45,18,0.22))}
+.bg5{background:radial-gradient(circle at 30% 70%,rgba(113,113,122,0.22),rgba(39,39,42,0.22))}
+.bg6{background:radial-gradient(circle at 50% 30%,rgba(236,72,153,0.22),rgba(131,24,67,0.22))}
+.bg7{background:radial-gradient(circle at 65% 55%,rgba(168,85,247,0.22),rgba(88,28,135,0.22))}
+.bg8{background:radial-gradient(circle at 45% 45%,rgba(234,179,8,0.22),rgba(113,63,18,0.22))}
+.bg9{background:radial-gradient(circle at 55% 35%,rgba(239,68,68,0.22),rgba(127,29,29,0.22))}
+.bg10{background:radial-gradient(circle at 40% 50%,rgba(20,184,166,0.22),rgba(15,118,110,0.22))}
+.bg11{background:radial-gradient(circle at 70% 60%,rgba(99,102,241,0.22),rgba(67,56,202,0.22))}
+.bg12{background:radial-gradient(circle at 35% 40%,rgba(139,92,246,0.22),rgba(91,33,182,0.22))}
+.bg13{background:radial-gradient(circle at 60% 50%,rgba(6,182,212,0.22),rgba(21,94,117,0.22))}
+.bg14{background:radial-gradient(circle at 45% 65%,rgba(244,63,94,0.22),rgba(190,18,60,0.22))}
+.bg15{background:radial-gradient(circle at 50% 40%,rgba(34,197,94,0.22),rgba(21,128,61,0.22))}
+.bg16{background:radial-gradient(circle at 70% 70%,rgba(251,146,60,0.22),rgba(194,65,12,0.22))}
+.bg17{background:radial-gradient(circle at 30% 30%,rgba(129,140,248,0.22),rgba(79,70,229,0.22))}
+.bg18{background:radial-gradient(circle at 65% 45%,rgba(45,212,191,0.22),rgba(13,148,136,0.22))}
+.bg19{background:radial-gradient(circle at 40% 55%,rgba(244,114,182,0.22),rgba(190,24,93,0.22))}
+.bg20{background:radial-gradient(circle at 55% 60%,rgba(96,165,250,0.22),rgba(30,64,175,0.22))}
+.bg21{background:radial-gradient(circle at 50% 50%,rgba(192,132,252,0.22),rgba(126,34,206,0.22))}
+.bg22{background:radial-gradient(circle at 35% 45%,rgba(34,211,238,0.22),rgba(14,116,144,0.22))}
+.bg23{background:radial-gradient(circle at 70% 35%,rgba(253,224,71,0.22),rgba(161,98,7,0.22))}
+.bg24{background:radial-gradient(circle at 45% 70%,rgba(253,164,175,0.22),rgba(190,18,60,0.22))}
+.bg25{background:radial-gradient(circle at 60% 40%,rgba(110,231,183,0.22),rgba(4,120,87,0.22))}
+.bg26{background:radial-gradient(circle at 30% 60%,rgba(147,197,253,0.22),rgba(30,64,175,0.22))}
+.bg27{background:radial-gradient(circle at 65% 50%,rgba(216,180,254,0.22),rgba(126,34,206,0.22))}
+.bg28{background:radial-gradient(circle at 40% 40%,rgba(153,246,228,0.22),rgba(15,118,110,0.22))}
+.bg29{background:radial-gradient(circle at 55% 55%,rgba(240,171,252,0.22),rgba(192,38,211,0.22))}
+.bg30{background:radial-gradient(circle at 70% 45%,rgba(125,211,252,0.22),rgba(3,105,161,0.22))}
+.bg31{background:radial-gradient(circle at 35% 65%,rgba(134,239,172,0.22),rgba(21,128,61,0.22))}
+.bg32{background:radial-gradient(circle at 60% 30%,rgba(254,215,170,0.22),rgba(194,65,12,0.22))}
+.bg33{background:radial-gradient(circle at 45% 50%,rgba(199,210,254,0.22),rgba(79,70,229,0.22))}
+.bg34{background:radial-gradient(circle at 50% 60%,rgba(251,207,232,0.22),rgba(190,24,93,0.22))}
+.bg35{background:radial-gradient(circle at 70% 50%,rgba(252,165,165,0.22),rgba(220,38,38,0.22))}
+.bg36{background:radial-gradient(circle at 40% 45%,rgba(251,146,60,0.22),rgba(234,88,12,0.22))}
+.bg-final{background:radial-gradient(circle at 50% 50%,rgba(102,126,234,0.22),rgba(30,58,138,0.22))}
+
+.back-btn{
+ position:absolute;top:12px;left:12px;
+ font-size:1.2em;
+ color:white;
+ background:rgba(255,255,255,0.22);
+ border:1px solid rgba(255,255,255,0.22);
+ padding:6px 12px;
+ border-radius:10px;
+ cursor:pointer;
+ z-index:50;
+}
+
+
+/* Final page: make emojis smaller and slightly transparent so text stays readable on mobile */
+.page.bg-final .emoji { font-size: clamp(1.6em, 4vw, 2.4em); opacity:0.92; }
+
+</style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+const wishes=[
+'Привет, мужа! С Днём Рождения! С твоими 36! Впереди тебя ждет соответствующее количество пожеланий и, надеюсь, такое же количество улыбок!',
+'Пусть каждый спуск с горы будет идеальным, а снег пухлым!',
+'Пусть в твоей жизни не будет волн-закрывашек, а в очереди на лайнапе ты всегда будешь первым!',
+'Пусть здоровье не подводит тебя!',
+'Пусть каждый привоз диджея будет отлично организован, а публика не будет залетной!',
+'Пусть Патрисия всегда закапывает за собой сама!',
+'Пусть каждый день приносит что-то новое!',
+'Пусть жизнь будет яркой, насыщенной и запоминающейся!',
+'Пусть лук никогда не оказывается в твоих блюдах!',
+'Пусть тебя всегда окружает любовь и тепло!',
+'Пусть мечты сбываются!',
+'Пусть интерес к жизни не угасает!',
+'Пусть улыбка появляется на твоем лице не только тогда, когда ты смотришь на себя в зеркало в гостиной!',
+'Пусть Grok понимает тебя с полуслова!',
+'Пусть ежедневный +1% к капиталу станет твоей реальностью!',
+'Пусть каждое утро будет добрым и безголубиным!',
+'Пусть энергия бьет ключом!',
+'Пусть путешествия будут незабываемыми!',
+'Пусть тебя окружают только порядочные и приятные люди!',
+'Пусть в нужный момент зарядка всегда будет свободна (и остается бесплатной)!',
+'Пусть идеи приходят в нужный момент!',
+'Пусть музыка всегда вдохновляет и придает сил!',
+'Пусть условия всегда совпадают с прогнозом!',
+'Пусть красота окружает тебя везде!',
+'Пусть удача всегда будет на твоей стороне!',
+'Пусть всегда ощущается ценность момента!',
+'Пусть подарки судьбы тебя радуют!',
+'Пусть ночи будут спокойными!',
+'Пусть маленькая магия случается с тобой каждый день!',
+'Пусть сотрудники всегда приходят к тебе с решениями!',
+'Пусть тебе всегда будет хватать времени на себя и свои увлечения!',
+'Пусть самым классным периодом в жизни будет «сейчас»!',
+'Пусть рослинные наггетсы никогда не будут сухими!',
+'Пусть Ева перестанет скрипеть без детейлинга!',
+'Пусть твоя семья будет для тебя источником поддержки, любви и тепла!',
+'Пусть самые красивые девочки лайкают на Тиндере только тебя!',
+'Пусть шутки твоей жены всегда будут смешными!'
+];
+const emojis=[
+[{e:'🎉',a:'emoji-pop',l:'20%',t:'15%'},{e:'🎂',a:'emoji-bounce',l:'75%',t:'20%'},{e:'🎈',a:'emoji-float',l:'50%',t:'80%'}],
+[{e:'🏂',a:'emoji-swing',l:'15%',t:'25%'},{e:'❄️',a:'emoji-float',l:'80%',t:'15%'},{e:'⛷️',a:'emoji-bounce',l:'45%',t:'75%'}],
+[{e:'🏄',a:'emoji-swing',l:'18%',t:'20%'},{e:'🌊',a:'emoji-float',l:'75%',t:'25%'},{e:'🤙',a:'emoji-pulse',l:'50%',t:'78%'}],
+[{e:'💪',a:'emoji-pulse',l:'20%',t:'30%'},{e:'🏃',a:'emoji-bounce',l:'70%',t:'20%'},{e:'❤️',a:'emoji-float',l:'85%',t:'70%'}],
+[{e:'🎧',a:'emoji-spin',l:'15%',t:'25%'},{e:'🎵',a:'emoji-float',l:'78%',t:'18%'},{e:'🎤',a:'emoji-bounce',l:'48%',t:'75%'}],
+[{e:'🐈',a:'emoji-bounce',l:'22%',t:'28%'},{e:'💩',a:'emoji-spin',l:'72%',t:'22%'},{e:'😅',a:'emoji-pulse',l:'50%',t:'72%'}],
+[{e:'✨',a:'emoji-float',l:'18%',t:'22%'},{e:'🌟',a:'emoji-pulse',l:'75%',t:'25%'},{e:'💫',a:'emoji-spin',l:'45%',t:'78%'}],
+[{e:'🎨',a:'emoji-swing',l:'20%',t:'25%'},{e:'🌈',a:'emoji-float',l:'72%',t:'20%'},{e:'🎪',a:'emoji-bounce',l:'48%',t:'75%'}],
+[{e:'🧅',a:'emoji-spin',l:'25%',t:'30%'},{e:'🚫',a:'emoji-pulse',l:'68%',t:'25%'},{e:'😤',a:'emoji-bounce',l:'50%',t:'70%'}],
+[{e:'💕',a:'emoji-pulse',l:'18%',t:'28%'},{e:'🤗',a:'emoji-bounce',l:'75%',t:'22%'},{e:'☀️',a:'emoji-float',l:'48%',t:'72%'}],
+[{e:'💭',a:'emoji-float',l:'22%',t:'25%'},{e:'🌠',a:'emoji-spin',l:'70%',t:'20%'},{e:'✨',a:'emoji-pulse',l:'50%',t:'75%'}],
+[{e:'🔥',a:'emoji-pulse',l:'20%',t:'30%'},{e:'🚀',a:'emoji-bounce',l:'72%',t:'22%'},{e:'⚡',a:'emoji-spin',l:'48%',t:'72%'}],
+[{e:'😄',a:'emoji-bounce',l:'18%',t:'25%'},{e:'🪞',a:'emoji-float',l:'75%',t:'28%'},{e:'😎',a:'emoji-pulse',l:'50%',t:'70%'}],
+[{e:'🤖',a:'emoji-spin',l:'22%',t:'28%'},{e:'💬',a:'emoji-float',l:'70%',t:'22%'},{e:'🧠',a:'emoji-pulse',l:'48%',t:'75%'}],
+[{e:'💰',a:'emoji-bounce',l:'20%',t:'30%'},{e:'📈',a:'emoji-float',l:'72%',t:'20%'},{e:'💵',a:'emoji-pulse',l:'50%',t:'72%'}],
+[{e:'☀️',a:'emoji-pulse',l:'25%',t:'25%'},{e:'🚫',a:'emoji-spin',l:'15%',t:'70%'},{e:'🕊️',a:'emoji-float',l:'75%',t:'28%'}],
+[{e:'⚡',a:'emoji-pulse',l:'18%',t:'28%'},{e:'💪',a:'emoji-bounce',l:'75%',t:'22%'},{e:'🔋',a:'emoji-float',l:'48%',t:'75%'}],
+[{e:'✈️',a:'emoji-float',l:'20%',t:'25%'},{e:'🗺️',a:'emoji-swing',l:'72%',t:'30%'},{e:'🌍',a:'emoji-spin',l:'48%',t:'70%'}],
+[{e:'🤝',a:'emoji-bounce',l:'22%',t:'28%'},{e:'👥',a:'emoji-pulse',l:'70%',t:'22%'},{e:'😊',a:'emoji-float',l:'50%',t:'75%'}],
+[{e:'🔌',a:'emoji-pulse',l:'18%',t:'30%'},{e:'🔋',a:'emoji-bounce',l:'75%',t:'22%'},{e:'⚡',a:'emoji-float',l:'48%',t:'72%'}],
+[{e:'💡',a:'emoji-pulse',l:'20%',t:'25%'},{e:'🧠',a:'emoji-float',l:'72%',t:'28%'},{e:'✨',a:'emoji-bounce',l:'50%',t:'70%'}],
+[{e:'🎵',a:'emoji-float',l:'18%',t:'28%'},{e:'🎸',a:'emoji-swing',l:'75%',t:'22%'},{e:'🎧',a:'emoji-bounce',l:'48%',t:'75%'}],
+[{e:'🌤️',a:'emoji-float',l:'22%',t:'25%'},{e:'📊',a:'emoji-pulse',l:'70%',t:'30%'},{e:'✅',a:'emoji-bounce',l:'50%',t:'72%'}],
+[{e:'🌸',a:'emoji-float',l:'20%',t:'28%'},{e:'🦋',a:'emoji-swing',l:'72%',t:'22%'},{e:'🌺',a:'emoji-pulse',l:'48%',t:'75%'}],
+[{e:'🍀',a:'emoji-spin',l:'18%',t:'25%'},{e:'🎲',a:'emoji-bounce',l:'75%',t:'28%'},{e:'✨',a:'emoji-float',l:'50%',t:'70%'}],
+[{e:'⏰',a:'emoji-pulse',l:'22%',t:'30%'},{e:'💎',a:'emoji-spin',l:'70%',t:'22%'},{e:'🌟',a:'emoji-float',l:'48%',t:'75%'}],
+[{e:'🎁',a:'emoji-bounce',l:'20%',t:'25%'},{e:'🎀',a:'emoji-float',l:'72%',t:'28%'},{e:'🎉',a:'emoji-pulse',l:'50%',t:'72%'}],
+[{e:'🌙',a:'emoji-float',l:'18%',t:'25%'},{e:'⭐',a:'emoji-pulse',l:'75%',t:'30%'},{e:'😴',a:'emoji-bounce',l:'48%',t:'70%'}],
+[{e:'✨',a:'emoji-pulse',l:'22%',t:'28%'},{e:'🪄',a:'emoji-spin',l:'70%',t:'22%'},{e:'🌟',a:'emoji-float',l:'48%',t:'75%'}],
+[{e:'👔',a:'emoji-swing',l:'20%',t:'30%'},{e:'💼',a:'emoji-bounce',l:'72%',t:'22%'},{e:'✅',a:'emoji-pulse',l:'50%',t:'72%'}],
+[{e:'⏰',a:'emoji-pulse',l:'18%',t:'25%'},{e:'🎯',a:'emoji-bounce',l:'75%',t:'28%'},{e:'🏖️',a:'emoji-float',l:'48%',t:'70%'}],
+[{e:'⏳',a:'emoji-float',l:'22%',t:'28%'},{e:'⏰',a:'emoji-pulse',l:'70%',t:'22%'},{e:'✨',a:'emoji-bounce',l:'50%',t:'75%'}],
+[{e:'🍗',a:'emoji-bounce',l:'20%',t:'30%'},{e:'🌱',a:'emoji-float',l:'72%',t:'22%'},{e:'💚',a:'emoji-pulse',l:'48%',t:'72%'}],
+[{e:'🚗',a:'emoji-swing',l:'18%',t:'25%'},{e:'🔧',a:'emoji-bounce',l:'75%',t:'28%'},{e:'✨',a:'emoji-float',l:'50%',t:'70%'}],
+[{e:'👨‍👩‍👧',a:'emoji-pulse',l:'22%',t:'28%'},{e:'❤️',a:'emoji-float',l:'70%',t:'22%'},{e:'🏠',a:'emoji-bounce',l:'48%',t:'75%'}],
+[{e:'📱',a:'emoji-bounce',l:'20%',t:'30%'},{e:'💕',a:'emoji-pulse',l:'72%',t:'22%'},{e:'😏',a:'emoji-swing',l:'48%',t:'72%'}],
+[{e:'😂',a:'emoji-bounce',l:'18%',t:'25%'},{e:'🤣',a:'emoji-pulse',l:'75%',t:'28%'},{e:'😄',a:'emoji-float',l:'50%',t:'70%'}]
+];
+let currentPage=0;
+function renderPage(index){
+if(index===37){
+document.getElementById('container').innerHTML=`${(index>0?'<div class="back-btn" onclick="prevPage()">←</div>':'')}
+<div class="page bg-final" onclick="nextPage()">
+<div class="emoji emoji-spin" style="left:15%;top:20%;font-size:2.2em">🎊</div>
+<div class="emoji emoji-bounce" style="right:15%;top:25%;font-size:2.2em">🎉</div>
+<div class="emoji emoji-float" style="left:10%;bottom:25%;font-size:1.8em">✨</div>
+<div class="emoji emoji-pulse" style="right:10%;bottom:30%;font-size:1.8em">💝</div>
+<div class="final-title">Сегодня тебе 36 лет!</div>
+<div class="wish-text">
+<div class="final-wish">
+Ты - это 36 лет счастья, радости, запоминающихся моментов. 36 лет достижения высот. 36 лет ты Личность с большой буквы!<br><br>
+Я уверена, что впереди тебя ждет еще много всего прекрасного и вдохновляющего!<br><br>
+Главное, чтобы опорой для этого было крепкое здоровье, а рядом всегда были люди, с которыми ты можешь разделить эмоции этой жизни!<br><br>
+С Днём Рождения, Ромочка! Обнимаю и люблю.
+<div class="signature">Твоя Даша ❤️</div>
+</div>
+</div>
+</div>
+`;
+return;
+}
+if(index===0){
+const ems=emojis[0];
+document.getElementById('container').innerHTML=`${(index>0?'<div class="back-btn" onclick="prevPage()">←</div>':'')}
+<div class="page bg0" onclick="nextPage()">
+${ems.map(em=>`<div class="emoji ${em.a}" style="left:${em.l};top:${em.t}">${em.e}</div>`).join('')}
+<div class="wish-text intro-text">${wishes[0]}</div>
+<div class="tap-hint">Нажми →</div>
+</div>
+`;
+return;
+}
+const ems=emojis[index];
+document.getElementById('container').innerHTML=`${(index>0?'<div class="back-btn" onclick="prevPage()">←</div>':'')}
+<div class="page bg${index}" onclick="nextPage()">
+${ems.map(em=>`<div class="emoji ${em.a}" style="left:${em.l};top:${em.t}">${em.e}</div>`).join('')}
+<div class="wish-text">${wishes[index]}</div>
+<div class="tap-hint">Нажми →</div>
+<div class="page-number">${index} из 36</div>
+</div>
+`;
+}
+function prevPage(){if(currentPage>0){currentPage--;renderPage(currentPage);}} 
+function nextPage(){
+if(currentPage<37){
+currentPage++;
+renderPage(currentPage);
+}
+}
+renderPage(0);
+</script>
+</body>
+</html>
